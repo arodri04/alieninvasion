@@ -41,7 +41,7 @@ def run_game():
         #Getting key and mouse events
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
         gf.update_aliens(ai_settings, aliens)
     
         #applying the bg color to screen 
