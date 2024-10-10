@@ -11,7 +11,6 @@ import pygame
 from pygame.sprite import Group
 from settings import Settings
 from ship import Ship
-from alien import Alien
 import game_function as gf
 from game_stats import GameStats
 from button import Button

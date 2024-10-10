@@ -195,6 +195,7 @@ def fire_bullet(ai_settings, screen , ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
+        print(bullets)
 
 def get_number_aliens_x(ai_settings, alien_width):
     #find out and return how many aliens from row
