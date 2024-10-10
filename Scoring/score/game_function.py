@@ -142,8 +142,11 @@ def change_fleet_direction(ai_settings, aliens):
     #drop fleet and change directions
     for alien in aliens.sprites():
         alien.rect.y += ai_settings.fleet_drop_speed
-    ai_settings.fleet_direction *= -1
 
+     
+    ai_settings.fleet_direction *= -1
+    print(f"changing directions {ai_settings.fleet_direction}")
+       
 def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
     #Remove life
     if stats.ships_left > 0:
@@ -195,7 +198,7 @@ def fire_bullet(ai_settings, screen , ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
-        print(bullets)
+        
 
 def get_number_aliens_x(ai_settings, alien_width):
     #find out and return how many aliens from row
@@ -216,7 +219,9 @@ def create_alien(ai_settings, screen, aliens, alien_number, row_number):
     alien.x = alien_width + 2 * alien_width * alien_number
     alien.rect.x = alien.x
     alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
-    aliens.add(alien)
+    while len(aliens) < 1:
+        aliens.add(alien)
+
 
 def create_fleet(ai_settings, screen, ship, aliens):
     #create aliens and find out how many are in the rows
